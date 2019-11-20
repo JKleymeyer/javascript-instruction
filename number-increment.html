@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="subtract()">-</button>
+    <input id="theNbr" type="text" value="0">
+    <button onclick="add()">+</button>
+
+    <script>
+
+        let nbr = 0;
+        function subtract() {
+            nbr--;
+            document.getElementById("theNbr").value = nbr;
+            changeStyle();
+        }
+
+        function add() {
+            nbr++;
+            document.getElementById("theNbr").value = nbr;
+            changeStyle();
+        }
+
+        function changeStyle() {
+
+            let theNbr = document.getElementById("theNbr");
+            theNbr.style.color = "black";
+            theNbr.style.fontStyle = "normal";
+            theNbr.style.fontSize = "1em";
+
+            if (nbr % 2 == 0) {
+                theNbr.style.color = "red";
+            } if (nbr % 3 == 0) {
+                theNbr.style.fontStyle = "italic";
+            } if (nbr % 7 == 0) {
+                theNbr.style.fontSize = "2.5em";
+            }
+        }
+    </script>
+</body>
+
+</html>
